@@ -44,5 +44,13 @@ namespace FortnitePlayer
         public int GetHP() => hp;
 
         public string GetSkin() => skin;
+
+        //Setters
+        public void SetHP(int hp)
+        {
+            if (hp > 100) hp = 100;
+            else if (hp < 0) hp = 0;
+            this.hp = hp;
+        }
     }
 }
