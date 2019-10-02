@@ -9,6 +9,18 @@ namespace FortnitePlayer
         private string skin;
         private int hp;
 
+        public FNPlayer()
+        {
+            hp = 100;
+            skin = "default";
+        }
+
+        public FNPlayer(int hp, string skin)
+        {
+            this.hp = hp;
+            this.skin = skin;
+        }
+
         private void TakeDamage(int dmg)
         {
             hp -= dmg;
@@ -21,7 +33,7 @@ namespace FortnitePlayer
             hp = Math.Min(100, hp + healAmount);
         }
 
-        private void Shoot(FNPlayer enemy)
+        public void Shoot(FNPlayer enemy)
         {
             enemy.TakeDamage(10);
         }
