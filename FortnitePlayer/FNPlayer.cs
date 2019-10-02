@@ -9,6 +9,7 @@ namespace FortnitePlayer
         private string skin;
         private int hp;
 
+        //Constructors
         public FNPlayer()
         {
             hp = 100;
@@ -21,8 +22,7 @@ namespace FortnitePlayer
             this.skin = skin;
         }
 
-        public int GetHP() => hp;
-
+        //Methods
         private void TakeDamage(int dmg)
         {
             hp-= dmg;
@@ -39,5 +39,10 @@ namespace FortnitePlayer
         {
             enemy.TakeDamage(10);
         }
+
+        //Getters
+        public int GetHP() => hp;
+
+        public string GetSkin() => skin;
     }
 }
