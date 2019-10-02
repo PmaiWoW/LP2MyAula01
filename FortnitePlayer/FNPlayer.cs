@@ -6,33 +6,39 @@ namespace FortnitePlayer
 {
     public class FNPlayer
     {
-        private string skin;
-        private int hp;
+        //Instance Variables
+        //private string skin;
+        //private int hp;
+
+        //Properties
+        public string Skin { get; set; }
+
+        public int HP { get; set; }
 
         //Constructors
         public FNPlayer()
         {
-            hp = 100;
-            skin = "default";
+            HP = 100;
+            Skin = "default";
         }
 
-        public FNPlayer(int hp, string skin)
+        public FNPlayer(int HP, string Skin)
         {
-            this.hp = hp;
-            this.skin = skin;
+            this.HP = HP;
+            this.Skin = Skin;
         }
 
         //Methods
         private void TakeDamage(int dmg)
         {
-            hp-= dmg;
-            if (hp < 0) hp = 0;
-            // hp = Math.Max(0, hp - dmg)
+            HP -= dmg;
+            if (HP < 0) HP = 0;
+            // HP = Math.Max(0, HP - dmg)
         }
 
         private void Heal(int healAmount)
         {
-            hp = Math.Min(100, hp + healAmount);
+            HP = Math.Min(100, HP + healAmount);
         }
 
         public void Shoot(FNPlayer enemy)
@@ -40,17 +46,19 @@ namespace FortnitePlayer
             enemy.TakeDamage(10);
         }
 
+        /*
         //Getters
-        public int GetHP() => hp;
+        public int GetHP() => HP;
 
-        public string GetSkin() => skin;
+        public string GetSkin() => Skin;
 
         //Setters
-        public void SetHP(int hp)
+        public void SetHP(int HP)
         {
-            if (hp > 100) hp = 100;
-            else if (hp < 0) hp = 0;
-            this.hp = hp;
+            if (HP > 100) HP = 100;
+            else if (HP < 0) HP = 0;
+            this.HP = HP;
         }
+        */
     }
 }
