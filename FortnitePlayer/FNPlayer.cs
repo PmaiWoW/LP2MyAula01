@@ -6,6 +6,7 @@ namespace FortnitePlayer
 {
     public class FNPlayer
     {
+        public static int MaxHP { get; } = 100;
         //Instance Variables
         //private string skin;
         private int hp;
@@ -18,14 +19,14 @@ namespace FortnitePlayer
             get => hp;
             set
             {
-                hp = (value < 0) ? 0 : (value > 100) ? 100 : value;
+                hp = (value < 0) ? 0 : (value > MaxHP) ? MaxHP : value;
             }
         }
 
         //Constructors
         public FNPlayer()
         {
-            HP = 100;
+            HP = MaxHP;
             Skin = "default";
         }
 
@@ -45,7 +46,7 @@ namespace FortnitePlayer
 
         private void Heal(int healAmount)
         {
-            HP = Math.Min(100, HP + healAmount);
+            HP = Math.Min(MaxHP, HP + healAmount);
         }
 
         public void Shoot(FNPlayer enemy)
