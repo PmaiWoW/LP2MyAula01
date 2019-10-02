@@ -8,12 +8,19 @@ namespace FortnitePlayer
     {
         //Instance Variables
         //private string skin;
-        //private int hp;
+        private int hp;
 
         //Properties
-        public string Skin { get; set; }
+        public string Skin { get; }
 
-        public int HP { get; set; }
+        public int HP
+        {
+            get => hp;
+            set
+            {
+                hp = (value < 0) ? 0 : (value > 100) ? 100 : value;
+            }
+        }
 
         //Constructors
         public FNPlayer()
@@ -22,10 +29,10 @@ namespace FortnitePlayer
             Skin = "default";
         }
 
-        public FNPlayer(int HP, string Skin)
+        public FNPlayer(int hp, string skin)
         {
-            this.HP = HP;
-            this.Skin = Skin;
+            HP = HP;
+            Skin = Skin;
         }
 
         //Methods
