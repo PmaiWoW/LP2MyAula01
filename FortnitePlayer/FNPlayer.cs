@@ -21,9 +21,11 @@ namespace FortnitePlayer
             this.skin = skin;
         }
 
+        public int GetHP() => hp;
+
         private void TakeDamage(int dmg)
         {
-            hp -= dmg;
+            hp-= dmg;
             if (hp < 0) hp = 0;
             // hp = Math.Max(0, hp - dmg)
         }
