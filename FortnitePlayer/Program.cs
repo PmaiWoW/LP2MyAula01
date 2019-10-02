@@ -6,7 +6,7 @@ namespace FortnitePlayer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            FNPlayer p1 = new FNPlayer();
         }
     }
 }
